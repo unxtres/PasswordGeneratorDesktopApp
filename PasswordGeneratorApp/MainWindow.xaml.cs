@@ -127,5 +127,9 @@ namespace PasswordGeneratorApp
             else
                 Haslo.Text = "Wybierz jedną z opcji";
         }
+        private void Copy(object sender, RoutedEventArgs e)
+        {
+            Clipboard.SetText(Haslo.Text);
+        }
     }
 }

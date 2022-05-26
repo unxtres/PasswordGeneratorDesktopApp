@@ -11,8 +11,9 @@
         <CheckBox Content="Big Letters" HorizontalAlignment="Left" Margin="33,131,0,0" VerticalAlignment="Top" Checked="BigLetters_Checked" Unchecked="BigLetters_Unchecked"/>
         <CheckBox Content="Numbers" HorizontalAlignment="Left" Margin="33,166,0,0" VerticalAlignment="Top" Checked="Numbers_Checked" Unchecked="Numbers_Unchecked"/>
         <CheckBox Content="Special Characters" HorizontalAlignment="Left" Margin="33,202,0,0" VerticalAlignment="Top" Checked="SpedcialChars_Checked" Unchecked="SpecialChars_Unchecked"/>
-        <TextBlock x:Name="Haslo" HorizontalAlignment="Left" Margin="67,272,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top"/>
+        <TextBox x:Name="Haslo" HorizontalAlignment="Left" Margin="67,294,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.492,0.503"/>
         <Button Content="Generate" HorizontalAlignment="Left" Margin="51,232,0,0" VerticalAlignment="Top" Click="GeneratePassword"/>
+        <Button Content="Copy" HorizontalAlignment="Left" Margin="207,292,0,0" VerticalAlignment="Top" Click="Copy"/>
         <ComboBox x:Name="PLenght" HorizontalAlignment="Left" Margin="185,98,0,0" VerticalAlignment="Top" Width="44" SelectionChanged="ComboBox_PassLenght" SelectedIndex="2">
             <ComboBoxItem Content="6"/>
             <ComboBoxItem Content="7"/>
@@ -26,6 +27,5 @@
             <ComboBoxItem Content="15"/>
             <ComboBoxItem Content="16"/>
         </ComboBox>
-
     </Grid>
 </Window>
