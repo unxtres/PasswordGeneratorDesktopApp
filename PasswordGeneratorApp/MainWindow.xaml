@@ -7,10 +7,10 @@
         mc:Ignorable="d"
         Title="Password Generator by uNx" Height="450" Width="300">
     <Grid>
-        <CheckBox Content="Small Letters" HorizontalAlignment="Left" Margin="33,98,0,0" VerticalAlignment="Top" Checked="SmallLetters_Checked"/>
-        <CheckBox Content="Big Letters" HorizontalAlignment="Left" Margin="33,131,0,0" VerticalAlignment="Top" Checked="BigLetters_Checked"/>
-        <CheckBox Content="Numbers" HorizontalAlignment="Left" Margin="33,166,0,0" VerticalAlignment="Top" Checked="Numbers_Checked"/>
-        <CheckBox Content="Special Characters" HorizontalAlignment="Left" Margin="33,202,0,0" VerticalAlignment="Top" Checked="SpedcialChars_Checked"/>
+        <CheckBox Content="Small Letters" HorizontalAlignment="Left" Margin="33,98,0,0" VerticalAlignment="Top" Checked="SmallLetters_Checked" Unchecked="smallLetters_Unchecked"/>
+        <CheckBox Content="Big Letters" HorizontalAlignment="Left" Margin="33,131,0,0" VerticalAlignment="Top" Checked="BigLetters_Checked" Unchecked="BigLetters_Unchecked"/>
+        <CheckBox Content="Numbers" HorizontalAlignment="Left" Margin="33,166,0,0" VerticalAlignment="Top" Checked="Numbers_Checked" Unchecked="Numbers_Unchecked"/>
+        <CheckBox Content="Special Characters" HorizontalAlignment="Left" Margin="33,202,0,0" VerticalAlignment="Top" Checked="SpedcialChars_Checked" Unchecked="SpecialChars_Unchecked"/>
         <TextBlock x:Name="Haslo" HorizontalAlignment="Left" Margin="67,272,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top"/>
         <Button Content="Generate" HorizontalAlignment="Left" Margin="51,232,0,0" VerticalAlignment="Top" Click="GeneratePassword"/>
         <ComboBox x:Name="PLenght" HorizontalAlignment="Left" Margin="185,98,0,0" VerticalAlignment="Top" Width="44" SelectionChanged="ComboBox_PassLenght" SelectedIndex="2">

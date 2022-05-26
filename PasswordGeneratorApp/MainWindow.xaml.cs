@@ -22,15 +22,25 @@ namespace PasswordGeneratorApp
         private string numbers = "1234567890";
         private string specials = "!@#$%^&*()-_=+:;<>,./}{[]";
         private string characters = "";
+        private int indexOfChars;
         private int id;
         public MainWindow()
         {
             InitializeComponent();
         }
 
-        private void SmallLetters_Checked(object sender, RoutedEventArgs e)
+        private void SmallLetters_Checked(object sender, RoutedEventArgs e)        
         {
             characters += lowercase;
+        }
+        private void smallLetters_Unchecked(object sender, RoutedEventArgs e)
+        {
+            
+            if (characters.Contains(lowercase))
+            {
+                indexOfChars = characters.IndexOf(lowercase);
+                characters = characters.Remove(indexOfChars, lowercase.Length);
+            }
         }
 
         private void BigLetters_Checked(object sender, RoutedEventArgs e)
@@ -38,14 +48,41 @@ namespace PasswordGeneratorApp
             characters += uppercase;
         }
 
+        private void BigLetters_Unchecked(object sender, RoutedEventArgs e)
+        {
+            if (characters.Contains(uppercase))
+            {
+                indexOfChars = characters.IndexOf(uppercase);
+                characters = characters.Remove(indexOfChars, uppercase.Length);
+            }
+        }
+
         private void Numbers_Checked(object sender, RoutedEventArgs e)
         {
             characters += numbers;
         }
 
+        private void Numbers_Unchecked(object sender, RoutedEventArgs e)
+        {
+            if (characters.Contains(numbers))
+            {
+                indexOfChars = characters.IndexOf(numbers);
+                characters = characters.Remove(indexOfChars, numbers.Length);
+            }
+        }
+
         private void SpedcialChars_Checked(object sender, RoutedEventArgs e)
         {
             characters += specials;
+        }
+
+        private void SpecialChars_Unchecked(object sender, RoutedEventArgs e)
+        {
+            if (characters.Contains(specials))
+            {
+                indexOfChars = characters.IndexOf(specials);
+                characters = characters.Remove(indexOfChars, specials.Length);
+            }
         }
 
         private void ComboBox_PassLenght(object sender, SelectionChangedEventArgs e)
@@ -76,14 +113,19 @@ namespace PasswordGeneratorApp
         }
         private void GeneratePassword(object sender, RoutedEventArgs e)
         {
-            Random rand = new Random();
-            char[] pass = new char[id];
-
-            for (int i = 0; i < id; i++)
+            if (characters.Length > 0)
             {
-                pass[i] = characters[rand.Next(characters.Length - 1)];
+                Random rand = new Random();
+                char[] pass = new char[id];
+
+                for (int i = 0; i < id; i++)
+                {
+                    pass[i] = characters[rand.Next(characters.Length - 1)];
+                }
+                Haslo.Text = String.Join("", pass);
             }
-            Haslo.Text = String.Join("", pass);
+            else
+                Haslo.Text = "Wybierz jedną z opcji";
         }
     }
 }
